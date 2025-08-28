@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeTodo } from '../features/todo/todoSlice';
 
 function Todos() {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos.todos || []);  //adding todos.todos because the state structure is { todos: { todos: [...] } } which is handled by map function
   const dispatch = useDispatch();
 
   return (
